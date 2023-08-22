@@ -15,13 +15,34 @@
 - PXE boot is integrated with DHCP
 
 - If DHCP assigns an ip lease, the host is allowed to request the PXE boot image and start the network installation process
-##  PXE Boot Process
-1) User sends DHCP Discover (requests ip address + PXE service information)
-2. DHCP Server sends DHCP Offer (sends open ip + PXE service information)
-3. User sends DHCP Request (accepts ip address)
-4. DHCP Server sends DHCP Acknowledgement
 
-5. Client performs Boot Service Discover
-6. MDT Server Acknowledgement (sends PXE boot information)
-7. Client requests PXE Boot via TFTP
-8. MDT Server delivers PXE Boot via TFTP
+## PXE Boot Process
+![Alt text](<../../Images/PXE Boot Process.png>)
+
+Once the process above is performed, the client will use a TFTP connection to download the PXE boot image.
+
+We can exploit the PXE boot image process for 2 different purposes:
+
+- Inject a privilege escalation vector (Local Admin Account) to gain admin access to the operating system once the PXE boot has been completed
+
+- Perform password scraping attacks to recover AD credentials used during the installation
+
+# PXE Boot Image Retrieval
+
+- Skip the part where we attempt to request an IP + PXE Boot preconfigure details from DHCP
+
+- 1st piece of information regarding the PXE Boot preconfigure received via DHCP is the IP of the MDT server
+
+- 2nd piece of information received would be the names of BCD files
+
+- BCD files store the information relevant to PXE Boots for the different types of architecture
+
+Connect to http://pxeboot.za.tryhackme.com (MDT Server) to view the BCD files:
+
+![Alt text](<../../Images/BCD Files.png>)
+
+- Use TFTP to request each of the BCD files and enumerate configuration
+
+- Focus on the BCD file of the x64 architecture
+
+- Copy and store the full name of this file: x64{7B....B3}.bcd
