@@ -46,3 +46,14 @@ Connect to http://pxeboot.za.tryhackme.com (MDT Server) to view the BCD files:
 - Focus on the BCD file of the x64 architecture
 
 - Copy and store the full name of this file: x64{7B....B3}.bcd
+
+### SSH into THMJMP1 (Windows Machine)
+
+- Create a folder with your username (Cameron) and copy the powerpxe folder
+
+<pre>
+C:\Users\THM>cd Documents
+C:\Users\THM\Documents> mkdir &lt;username&gt;
+C:\Users\THM\Documents> copy C:\powerpxe &lt;username&gt;\
+C:\Users\THM\Documents\> cd &lt;username&gt;
+</pre>
