@@ -68,7 +68,7 @@ Transfer successful: 12288 bytes in 1 second(s), 12288 bytes/s
 
 - THMMDT Server ip address
 
-<pre> nslookup thmmdt.za.tryhackme.com </pre>
+<pre>nslookup thmmdt.za.tryhackme.com </pre>
 
 - BCD file has now been recovered
 - Use `powerpxe.ps1` to read contents
@@ -100,4 +100,4 @@ PS C:\Users\THM\Documents\am0> tftp -i THMMDT IP GET "PXE Boot Image Location" p
 # Recover Credentials from PXE Boot Image
 - Use powerpxe to recover the credentials from bootstrap file
 
-<pre> PS C:\Users\THM\Documents\am0> Get-FindCredentials -WimFile pxeboot.wim </pre>
+<pre>PS C:\Users\THM\Documents\am0> Get-FindCredentials -WimFile pxeboot.wim </pre>
