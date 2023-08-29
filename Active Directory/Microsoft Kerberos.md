@@ -15,3 +15,17 @@ Kerberos protocol model:
 - Every client/server connection begins with authentication
 - Client and server, in turn, step through a sequence of actions designed to verify each party on the end of connection is genuine
 - If authentication is successful, session setup completes and a secure client/server session is estalished
+
+The Kerberos protocol makes use of:
+- Key Authentication
+- Authenticator Messages
+- Key Distribution
+- Session Tickets
+- Ticket Granting Tickets
+
+### Key Authentication
+- Way of proving a user knows the password without revealing the password (Secret Key Authentication)  
+
+For secret key authentication to work, the two parties must share a cryptographic session key, known only to them and to no others. The key is symmetric; it is a single key used for both encryption and decryption.  
+
+One party in the authentication process proves its knowledge of the key by encrypting a message. The other party proves its knowledge by decrypting the message.
