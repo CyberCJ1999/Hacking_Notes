@@ -5,7 +5,7 @@
  Domain: controller.local
 
  ## Harvesting Tickets w/ Rubeus
- - powerful tool for attacking Kerberos
+ - Powerful tool for attacking Kerberos
  
  Attacks include:
  - Overpass the Hash

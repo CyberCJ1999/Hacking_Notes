@@ -2,8 +2,8 @@
 Enumeration tool used to brute-force and enumerate valid AD users by abusing Kerberos pre-authentication.
 
 ## Abusing Pre-Authentication Overview
-- by brute-forcing Kerberos pre-authentication, you do not trigger `account failed to log on` events
-- when brute-forcing via Kerberos, you can brute-force only by sending a single UDP frame to KDC
+- By brute-forcing Kerberos pre-authentication, you do not trigger `account failed to log on` events
+- When brute-forcing via Kerberos, you can brute-force only by sending a single UDP frame to KDC
 
 ## Kerbrute Installation
 1) Download from https://github.com/ropnop/kerbrute/releases
