@@ -59,7 +59,7 @@
       9356B6BE6C01962596F47DE5220D70684400311A8F2C4E41654782563A5276DAB4B6F6097E4</pre>
 
 ## Crack the hash using Hashcat
-- Insert 23$ after $krb5asrep$
+- Insert 23$ after krb5asrep$
 
 <pre>hashcat -m 18200 hash.txt passwordlist.txt</pre>
 
