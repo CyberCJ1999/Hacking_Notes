@@ -2,8 +2,8 @@
 
 - Enumeration and decrypted `backup` account password
 - `backup` account has a unique permission that allows all Active Directory changes to be synced with this account
-
 - Use `secretsdump.py`
+- Retrieve all of the password hashes that this user account (that is synced with the domain controller) has to offer
 
 ## Dumping the NTDS.dit
 - Database that stores Active Directory data
