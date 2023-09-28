@@ -113,7 +113,7 @@ Password:
 1110: VULNNET-RST\j-goldenhand (SidTypeUser)
 1111: VULNNET-RST\j-leet (SidTypeUser)</pre>
 
-We have discovered the following user accounts:
+We have discovered the following user accounts:  
 Administrator  
 Guest  
 krbtgt  
