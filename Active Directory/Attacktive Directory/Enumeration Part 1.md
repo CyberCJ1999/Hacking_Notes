@@ -54,6 +54,7 @@ Nmap done: 1 IP address (1 host up) scanned in 27.03 seconds
 
 What are ports 139 and 445?  
 SMB has always been a network file sharing protocol. SMB uses either ip port 139 or 445.  
+
 `Port 139`
 - SMB originally ran on top of NetBIOS using port 139
 - NetBIOS is an older transport layer that allows Windows computers to talk to each other on the same network   
@@ -62,7 +63,11 @@ SMB has always been a network file sharing protocol. SMB uses either ip port 139
 - Later versions of SMB began to use port 445 on top of a TCP stack
 - Using TCP allows SMB to work over the internet
 
-## Enumeration w/ Kerbrute
+## Enumeration w/ Kerbrute  
+- Kerberos is a key authentication service with AD
+- Port 88
+- Use Kerbrute to brute force discovery of users and passwords  
+
 <pre> ./kerbrute userenum --dc 10.10.155.48 -d spookysec.local /home/kali/Downloads/User.txt </pre>
 
 --dc : location of the Domain Controller (KDC) to target  
