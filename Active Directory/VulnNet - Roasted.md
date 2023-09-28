@@ -37,7 +37,7 @@ Domain Name:VULNNET-RST                                                         
 
 ## SMB Enumeration
 - Port 139 + 445 is open
-- Use `smbclient` to enumerate shares
+- Use `smbmap` to enumerate shares
 
 <pre>smbmap -H 10.10.227.72 -u anonymous
 
