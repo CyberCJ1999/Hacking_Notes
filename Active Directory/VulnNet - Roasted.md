@@ -70,7 +70,7 @@ Domain Name:VULNNET-RST                                                         
 - We are able to list domain users using `lookupsid.py`
 
 ## lookupsid.py
-- Brute forcing of Windows SIDs to identify users.groups on the target
+- Brute forcing of Windows SIDs to identify users/groups on the target
 
 https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers  
 
