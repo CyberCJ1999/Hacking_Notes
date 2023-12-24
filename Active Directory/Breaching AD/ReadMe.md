@@ -11,4 +11,8 @@ We will cover the following techniques used to recover AD credentials in the net
 - Authentication Relays  
 
 [Microsoft Deployment Toolkit](https://github.com/CyberCJ1999/Hacking_Notes/blob/main/Active%20Directory/Breaching%20AD/Microsoft%20Deployment%20Toolkit.md)
-- Configuration Files
+- Configuration Files  
+
+## Network Diagram
+
+![Alt text](<../../Images/Breaching AD Diagram.png>)
