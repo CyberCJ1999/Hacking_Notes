@@ -13,3 +13,7 @@ Techniques for enumerating AD:
 - [Enumeration via PowerShell](https://github.com/CyberCJ1999/Hacking_Notes/blob/main/Active%20Directory/Enumerating%20AD/Enumerating%20via%20PowerShell.md)
 
 - Bloodhound
+
+
+## Network Diagram
+![Alt text](<../../Images/Enumerating AD Diagram.png>)
