@@ -1,13 +1,13 @@
 # Enumerating via Command Prompt
 
-- <pre>net</net> command
+- net command
 - enumerate information about the local system + Active Directory
 
 ## Users
 <pre>net user /domain</pre>
 - list all users in the AD domain
 
-<pre>net user cameron.jenkins /domain</pre>
+<pre>net user joe.bloggs /domain</pre>
 - enumerate detailed information about a single user account
 
 ## Groups
